@@ -43,11 +43,11 @@ Package.onTest( function ( api ) {
   api.use('tinytest');
   api.use('clinical:active-users');
 
-  api.addFiles('users-core-tests.js');
-  api.addFiles('users-edit-tests.js');
-  api.addFiles('users-image-grid-tests.js');
-  api.addFiles('users-list-tests.js');
-  api.addFiles('users-preview-tests.js');
-  api.addFiles('users-table-tests.js');
-  api.addFiles('users-upsert-tests.js');
+  api.addFiles('tests/users-core-tests.js');
+  api.addFiles('tests/users-edit-tests.js');
+  api.addFiles('tests/users-image-grid-tests.js');
+  api.addFiles('tests/users-list-tests.js');
+  api.addFiles('tests/users-preview-tests.js');
+  api.addFiles('tests/users-table-tests.js');
+  api.addFiles('tests/users-upsert-tests.js');
 });
