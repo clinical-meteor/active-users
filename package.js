@@ -1,8 +1,8 @@
 Package.describe({
   name:'clinical:active-users',
   version: '0.0.1',
-  summary: 'ActiveUsers::userUpsertPage',
-  git: 'https://github.com/awatson1978/photonic/tree/master/packages/active-users-upsert',
+  summary: 'ActiveUsers package with user tables, thumbnail page, basic profiles, etc.',
+  git: 'https://github.com/clinical-meteor/clinical-active-users',
   documentation: 'README.md',
 });
 
