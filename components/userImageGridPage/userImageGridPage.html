@@ -1,6 +1,6 @@
 <template name="userImageGridPage">
   <article id="userImageGridPage" class="page">
-    {{> navbarHeader}}
+    {{> recordHeader url="users" spreadsheet=false  imageGrid=false}}
 
     <input id="userSearchInput" type="text" class="glass fullwidth form-control" placeholder="search..." value="{{getRecordSearchFilter}}" />
 
@@ -14,8 +14,9 @@
           <img class="userImage" src="{{avatar}}" />
       </li>
     </ul>
-    <footer class="pageFooter">
+    <!-- <footer class="pageFooter">
       <h3 class="addRecordIcon"><i class="fa fa-sun-o"></i></h3>
-    </footer>
+    </footer> -->
+    {{> recordFooter }}
   </article>
 </template>

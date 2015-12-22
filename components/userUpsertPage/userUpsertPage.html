@@ -1,6 +1,6 @@
 <template name="userUpsertPage">
   <div id="userUpsertPage" class="page">
-    <header class="pageHeader">
+    <!-- <header class="pageHeader">
       <i class="indexButton fa fa-chevron-left"></i>
       <h4 class="userId barcode">{{_id}}</h4>
       <button id="userImageGridButton">
@@ -16,7 +16,8 @@
       {{#if _id}}
         <i class="lockButton fa {{getLockIcon}}"></i>
       {{/if}}
-    </header>
+    </header> -->
+    {{> recordHeader type="record" url="users" spreadsheet=false  imageGrid=false}}
 
     <div id="userUpsertCard" class="card-contents">
 

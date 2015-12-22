@@ -1,7 +1,7 @@
 
 <template name="usersListPage">
   <div id="usersListPage" class="page">
-    {{> navbarHeader }}
+    {{> recordHeader url="users" spreadsheet=false  imageGrid=false}}
 
     <input id="userSearchInput" type="text" class="glass fullwidth form-control" placeholder="search..." value="{{getRecordSearchFilter}}" />
     <ul id="usersUnorderedList">
@@ -27,8 +27,6 @@
       {{/if}}
 
     </ul>
-    <footer class="pageFooter">
-      <h3 class="addRecordIcon"><i class="fa fa-sun-o"></i></h3>
-    </footer>
+    {{> recordFooter }}
   </div>
 </template>

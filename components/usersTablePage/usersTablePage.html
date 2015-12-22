@@ -1,7 +1,7 @@
 
 <template name="usersTablePage">
   <article id="usersTablePage" class="page" style="{{getOpacityWithCorner}}">
-    {{> navbarHeader}}
+    {{> recordHeader url="users" spreadsheet=false  imageGrid=false}}
 
     <input id="userSearchInput" type="text" class="glass fullwidth form-control" placeholder="search..." value="{{getRecordSearchFilter}}" />
 
@@ -59,8 +59,9 @@
         {{/each}}
       </tbody>
     </table>
-    <footer class="pageFooter">
+    <!-- <footer class="pageFooter">
       <h3 class="addRecordIcon"><i class="fa fa-sun-o"></i></h3>
-    </footer>
+    </footer> -->
+    {{> recordFooter }}
   </article>
 </template>

@@ -1,6 +1,6 @@
 Package.describe({
   name:'clinical:active-users',
-  version: '0.0.3',
+  version: '0.0.4',
   summary: 'ActiveUsers package with user tables, thumbnail page, basic profiles, etc.',
   git: 'https://github.com/clinical-meteor/clinical-active-users',
   documentation: 'README.md',
@@ -35,6 +35,12 @@ Package.onUse( function ( api ) {
   api.addFiles('components/userEditPage/userEditPage.html', ['client']);
   api.addFiles('components/userEditPage/userEditPage.js', ['client']);
   api.addFiles('components/userEditPage/userEditPage.less', ['client']);
+
+
+  api.addFiles('components/usersListPage/usersListPage.html', ['client']);
+  api.addFiles('components/usersListPage/usersListPage.js', ['client']);
+  api.addFiles('components/usersListPage/usersListPage.less', ['client']);
+
 
   api.export('userUpsertPage');
 });
