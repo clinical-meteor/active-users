@@ -1,6 +1,6 @@
 Package.describe({
   name:'clinical:active-users',
-  version: '0.0.4',
+  version: '0.0.5',
   summary: 'ActiveUsers package with user tables, thumbnail page, basic profiles, etc.',
   git: 'https://github.com/clinical-meteor/clinical-active-users',
   documentation: 'README.md',

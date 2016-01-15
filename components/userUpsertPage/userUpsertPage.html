@@ -1,32 +1,15 @@
 <template name="userUpsertPage">
   <div id="userUpsertPage" class="page">
-    <!-- <header class="pageHeader">
-      <i class="indexButton fa fa-chevron-left"></i>
-      <h4 class="userId barcode">{{_id}}</h4>
-      <button id="userImageGridButton">
-        <i class="imageGridButton fa fa-th"></i>
-      </button>
-      <button id="userListButton">
-        <i class="listButton fa fa-list"></i>
-      </button>
-      <button id="userTableButton">
-        <i class="tableButton fa fa-table"></i>
-      </button>
-
-      {{#if _id}}
-        <i class="lockButton fa {{getLockIcon}}"></i>
-      {{/if}}
-    </header> -->
     {{> recordHeader type="record" url="users" spreadsheet=false  imageGrid=false}}
 
-    <div id="userUpsertCard" class="card-contents">
+    <div id="userUpsertCard" class="padded card-contents" style="{{getOpacity}}">
 
       <div id="userMetaData">
         <div id="userMetaInputs">
           <input id="usernameInput" class="glass form-control" type="text" placeholder="username" value="{{username}}" {{isReadOnly}}><br>
-          <input id="userFullNameInput"  class="glass form-control" type="url" placeholder="Jane Doe" value="{{profile.fullName}}" {{isReadOnly}}>
-          <input id="userEmailInput"  class="glass form-control" type="url" placeholder="username@somewhere.com" value="{{getEmailAddress}}" {{isReadOnly}}>
-          <input id="userAvatarInput"  class="glass form-control" type="url" placeholder="http://www.widget.com/cog.jpg" value="{{profile.avatar}}" {{isReadOnly}}>
+          <input id="userFullNameInput"  class="glass form-control" type="text" placeholder="Jane Doe" value="{{profile.fullName}}" {{isReadOnly}}>
+          <input id="userEmailInput"  class="glass form-control" type="text" placeholder="username@somewhere.com" value="{{getEmailAddress}}" {{isReadOnly}}>
+          <input id="userAvatarInput"  class="glass form-control" type="text" placeholder="http://www.widget.com/cog.jpg" value="{{profile.avatar}}" {{isReadOnly}}>
 
         </div>
         <img id="userImage" src="{{profile.avatar}}" />
