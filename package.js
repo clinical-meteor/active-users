@@ -1,6 +1,6 @@
 Package.describe({
   name:'clinical:active-users',
-  version: '0.0.5',
+  version: '0.1.0',
   summary: 'ActiveUsers package with user tables, thumbnail page, basic profiles, etc.',
   git: 'https://github.com/clinical-meteor/clinical-active-users',
   documentation: 'README.md',
@@ -15,32 +15,33 @@ Package.onUse( function ( api ) {
 
   api.addFiles('users-core.js', 'client');
 
-  api.addFiles('components/userUpsertPage/userUpsertPage.html', ['client']);
-  api.addFiles('components/userUpsertPage/userUpsertPage.js', ['client']);
-  api.addFiles('components/userUpsertPage/userUpsertPage.less', ['client']);
+  api.addFiles('client/components/userUpsertPage/userUpsertPage.html', ['client']);
+  api.addFiles('client/components/userUpsertPage/userUpsertPage.js', ['client']);
+  api.addFiles('client/components/userUpsertPage/userUpsertPage.less', ['client']);
 
-  api.addFiles('components/usersTablePage/usersTablePage.html', ['client']);
-  api.addFiles('components/usersTablePage/usersTablePage.js', ['client']);
-  api.addFiles('components/usersTablePage/usersTablePage.less', ['client']);
-  api.addFiles('components/usersTablePage/jquery.tablesorter.js', ['client']);
+  api.addFiles('client/components/usersTablePage/usersTablePage.html', ['client']);
+  api.addFiles('client/components/usersTablePage/usersTablePage.js', ['client']);
+  api.addFiles('client/components/usersTablePage/usersTablePage.less', ['client']);
+  api.addFiles('client/components/usersTablePage/jquery.tablesorter.js', ['client']);
 
-  api.addFiles('components/userPreviewPage/userPreviewPage.html', ['client']);
-  api.addFiles('components/userPreviewPage/userPreviewPage.js', ['client']);
-  api.addFiles('components/userPreviewPage/userPreviewPage.less', ['client']);
+  api.addFiles('client/components/userPreviewPage/userPreviewPage.html', ['client']);
+  api.addFiles('client/components/userPreviewPage/userPreviewPage.js', ['client']);
+  api.addFiles('client/components/userPreviewPage/userPreviewPage.less', ['client']);
 
-  api.addFiles('components/userImageGridPage/userImageGridPage.html', ['client']);
-  api.addFiles('components/userImageGridPage/userImageGridPage.js', ['client']);
-  api.addFiles('components/userImageGridPage/userImageGridPage.less', ['client']);
+  api.addFiles('client/components/userImageGridPage/userImageGridPage.html', ['client']);
+  api.addFiles('client/components/userImageGridPage/userImageGridPage.js', ['client']);
+  api.addFiles('client/components/userImageGridPage/userImageGridPage.less', ['client']);
 
-  api.addFiles('components/userEditPage/userEditPage.html', ['client']);
-  api.addFiles('components/userEditPage/userEditPage.js', ['client']);
-  api.addFiles('components/userEditPage/userEditPage.less', ['client']);
+  api.addFiles('client/components/userEditPage/userEditPage.html', ['client']);
+  api.addFiles('client/components/userEditPage/userEditPage.js', ['client']);
+  api.addFiles('client/components/userEditPage/userEditPage.less', ['client']);
 
 
-  api.addFiles('components/usersListPage/usersListPage.html', ['client']);
-  api.addFiles('components/usersListPage/usersListPage.js', ['client']);
-  api.addFiles('components/usersListPage/usersListPage.less', ['client']);
+  api.addFiles('client/components/usersListPage/usersListPage.html', ['client']);
+  api.addFiles('client/components/usersListPage/usersListPage.js', ['client']);
+  api.addFiles('client/components/usersListPage/usersListPage.less', ['client']);
 
+  api.addFiles('server/methods.js', 'server');
 
   api.export('userUpsertPage');
 });
@@ -48,12 +49,4 @@ Package.onUse( function ( api ) {
 Package.onTest( function ( api ) {
   api.use('tinytest');
   api.use('clinical:active-users');
-
-  api.addFiles('tests/users-core-tests.js');
-  api.addFiles('tests/users-edit-tests.js');
-  api.addFiles('tests/users-image-grid-tests.js');
-  api.addFiles('tests/users-list-tests.js');
-  api.addFiles('tests/users-preview-tests.js');
-  api.addFiles('tests/users-table-tests.js');
-  api.addFiles('tests/users-upsert-tests.js');
 });
