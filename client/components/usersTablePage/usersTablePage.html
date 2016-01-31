@@ -1,0 +1,49 @@
+
+<template name="usersTablePage">
+  <article id="usersTablePage" class="page">
+    {{> recordHeader url="users" spreadsheet=false  imageGrid=false}}
+    <div class="horizontally-padded" style={{getOpacity}}>
+      <input id="userSearchInput" type="text" class="glass fullwidth form-control" placeholder="search..." value="{{getRecordSearchFilter}}" />
+
+      <table id="usersTable" class=" table table-striped tablesorter">
+        <thead>
+          <tr class="userHeaderRow">
+            <th>
+              <i class="fa fa-signal"></i>
+            </th>
+            <th>
+              <i class="fa fa-image"></i>
+            </th>
+            <th>Name</th>
+            <th>Role</th>
+            <th>
+              <i class="fa fa-times"></i>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each usersList}}
+            <tr class="userRow {{isGrayedOut}}">
+              <td class="checkbox">
+                <i class="fa {{checkedIcon}}"></i>
+              </td>
+              <!-- <td class="barcode">{{_id}}</td> -->
+              <td class="avatar">
+                {{#if profile.avatar}}
+                <i class="fa fa-image"></i>
+                {{/if}}
+              </td>
+              <td>{{profile.fullName}}</td>
+              <td>{{profile.role}}</td>
+              <td class="delete">
+                <i class="fa fa-times"></i>
+              </td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+
+    </div>
+    {{> recordFooter }}
+  </article>
+</template>

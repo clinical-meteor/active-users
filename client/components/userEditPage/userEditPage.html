@@ -1,0 +1,13 @@
+<template name="userEditPage">
+  <div id="userEditPage" class="page">
+    {{> recordHeader type="record" url="users" spreadsheet=false  imageGrid=false}}
+
+    <div id="userEditCard" class="card-contents" style="{{getOpacity}}">
+      <input id="usernameInput" class="glass form-control" type="text" placeholder="Title" value="{{title}}"><br>
+      <input id="userEmailInput"  class="glass form-control" type="url" placeholder="http://www.widget.com" value="{{url}}">
+      <textarea id="userFullNameInput"  class="glass form-control" rows="10" placeholder="Lorem ipsum dolar set et...">{{description}}</textarea><br>
+    </div>
+
+    {{> recordFooter }}
+  </div>
+</template>

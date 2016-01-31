@@ -1,0 +1,8 @@
+
+
+
+Meteor.methods({
+  methodName:function (){ 
+
+  }
+});
