@@ -1,8 +1,8 @@
 <template name="userUpsertPage">
-  <div id="userUpsertPage" class="page">
+  <div id="userUpsertPage" style="{{getPageHeight}}">
     {{> recordHeader type="record" url="users" spreadsheet=false  imageGrid=false}}
 
-    <div id="userUpsertCard" class="padded card-contents" style="{{getOpacity}}">
+    <div id="userUpsertCard" class="padded card-contents page" style="{{getOpacity}}">
 
       <div id="userMetaData">
         <div id="userMetaInputs">

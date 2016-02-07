@@ -12,6 +12,8 @@ Package.onUse( function ( api ) {
   api.use('grove:less@0.1.1');
 
   api.use('clinical:router@2.0.17');
+  api.use('clinical:active-layout@0.7.16');
+  api.use('clinical:glass-ui@1.3.9');
 
   api.addFiles('users-core.js', 'client');
 

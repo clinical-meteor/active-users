@@ -1,11 +1,11 @@
 
 <template name="usersTablePage">
-  <article id="usersTablePage" class="page">
+  <article id="usersTablePage" style="{{getPageHeight}}">
     {{> recordHeader url="users" spreadsheet=false  imageGrid=false}}
-    <div class="horizontally-padded" style={{getOpacity}}>
+    <div class="horizontally-padded page" style={{getOpacity}}>
       <input id="userSearchInput" type="text" class="glass fullwidth form-control" placeholder="search..." value="{{getRecordSearchFilter}}" />
 
-      <table id="usersTable" class=" table table-striped tablesorter">
+      <table id="usersTable" class="table table-striped tablesorter">
         <thead>
           <tr class="userHeaderRow">
             <th>
