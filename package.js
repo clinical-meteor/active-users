@@ -1,6 +1,6 @@
 Package.describe({
   name:'clinical:active-users',
-  version: '0.0.5',
+  version: '0.1.1',
   summary: 'ActiveUsers package with user tables, thumbnail page, basic profiles, etc.',
   git: 'https://github.com/clinical-meteor/clinical-active-users',
   documentation: 'README.md',
@@ -12,6 +12,8 @@ Package.onUse( function ( api ) {
   api.use('grove:less@0.1.1');
 
   api.use('clinical:router@2.0.17');
+  api.use('clinical:active-layout@0.7.16');
+  api.use('clinical:glass-ui@1.3.9');
 
   api.addFiles('users-core.js', 'client');
 
@@ -49,11 +51,11 @@ Package.onTest( function ( api ) {
   api.use('tinytest');
   api.use('clinical:active-users');
 
-  api.addFiles('tests/users-core-tests.js');
-  api.addFiles('tests/users-edit-tests.js');
-  api.addFiles('tests/users-image-grid-tests.js');
-  api.addFiles('tests/users-list-tests.js');
-  api.addFiles('tests/users-preview-tests.js');
-  api.addFiles('tests/users-table-tests.js');
-  api.addFiles('tests/users-upsert-tests.js');
+  // api.addFiles('tests/users-core-tests.js');
+  // api.addFiles('tests/users-edit-tests.js');
+  // api.addFiles('tests/users-image-grid-tests.js');
+  // api.addFiles('tests/users-list-tests.js');
+  // api.addFiles('tests/users-preview-tests.js');
+  // api.addFiles('tests/users-table-tests.js');
+  // api.addFiles('tests/users-upsert-tests.js');
 });

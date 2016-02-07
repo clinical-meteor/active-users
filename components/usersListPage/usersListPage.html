@@ -1,8 +1,8 @@
 
 <template name="usersListPage">
-  <div id="usersListPage" class="page">
+  <div id="usersListPage" class="page" style="{{getPageHeight}}">
     {{> recordHeader url="users" spreadsheet=false  imageGrid=false}}
-    <div class="horizontally-padded" style="{{getOpacity}}">
+    <div class="horizontally-padded page" style="{{getOpacityWithCorner}}">
       <input id="userSearchInput" type="text" class="glass fullwidth form-control" placeholder="search..." value="{{getRecordSearchFilter}}" />
       <ul id="usersUnorderedList">
         {{#if hasNoContent}}
