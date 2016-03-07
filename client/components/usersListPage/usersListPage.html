@@ -16,16 +16,18 @@
 
         {{else}}
             <li class="userItem header">
-              <span class="avatar">Avatar</span>
+              <span class="avatarSpan">Avatar</span>
               <span class="fullName">Full Name</span>
               <span class="role">Role</span>
+              <span class="createdAt">Created At</span>
               <span class="right remove"></span>
             </li>
           {{#each usersList}}
             <li class="userItem user">
-              <span class="avatar">{{getAvatar}}</span>
+              <span class="avatarSpan"><img class="avatar" src="{{getAvatar}}" alt="" /></span>
               <span class="fullName">{{profile.fullName}}</span>
               <span class="role">{{role}}</span>
+              <span class="createdAt">{{getCreatedAt}}</span>
               <span class="right remove"><i class="fa fa-times"></i></span>
             </li>
           {{/each}}

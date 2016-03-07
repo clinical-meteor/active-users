@@ -1,20 +1,20 @@
 <template name="userUpsertPage">
   <div id="userUpsertPage" style="{{getPageHeight}}">
-    {{> recordHeader type="record" url="users" spreadsheet=false  imageGrid=false}}
+    <!-- {{> recordHeader type="record" url="users" spreadsheet=false  imageGrid=false}} -->
 
     <div id="userUpsertCard" class="padded card-contents page" style="{{getOpacity}}">
 
       <div id="userMetaData">
         <div id="userMetaInputs">
-          <input id="usernameInput" class="glass form-control" type="text" placeholder="username" value="{{username}}" {{isReadOnly}}><br>
-          <input id="userFullNameInput"  class="glass form-control" type="text" placeholder="Jane Doe" value="{{profile.fullName}}" {{isReadOnly}}>
-          <input id="userEmailInput"  class="glass form-control" type="text" placeholder="username@somewhere.com" value="{{getEmailAddress}}" {{isReadOnly}}>
-          <input id="userAvatarInput"  class="glass form-control" type="text" placeholder="http://www.widget.com/cog.jpg" value="{{profile.avatar}}" {{isReadOnly}}>
+          <input id="usernameInput" class="glass {{getInputClass}}" type="text" placeholder="username" value="{{username}}" {{isReadOnly}}><br>
+          <input id="userFullNameInput"  class="glass {{getInputClass}}" type="text" placeholder="Jane Doe" value="{{profile.fullName}}" {{isReadOnly}}>
+          <input id="userEmailInput"  class="glass {{getInputClass}}" type="text" placeholder="username@somewhere.com" value="{{getEmailAddress}}" {{isReadOnly}}>
+          <input id="userAvatarInput"  class="glass {{getInputClass}}" type="text" placeholder="http://www.widget.com/cog.jpg" value="{{profile.avatar}}" {{isReadOnly}}>
 
         </div>
-        <img id="userImage" src="{{profile.avatar}}" />
+        <img id="userImage" src="{{ getAvatar }}" />
       </div>
-      <textarea id="userDescriptionInput"  class="glass form-control" rows="10" placeholder="Lorem ipsum dolar set et..." {{isReadOnly}}>{{profile.description}}</textarea><br>
+      <textarea id="userDescriptionInput"  class="glass {{getInputClass}}" rows="10" placeholder="Lorem ipsum dolar set et..." {{isReadOnly}}>{{profile.description}}</textarea><br>
     </div>
 
     <footer class="pageFooter">

@@ -53,6 +53,9 @@ Template.usersListPage.rendered = function () {
 
 
 Template.usersListPage.helpers( {
+  getCreatedAt: function(){
+    return moment(this.createdAt).format("MMM DD, YYYY");
+  },
   hasNoContent: function () {
     if ( Users.find().count() === 0 ) {
       return true;

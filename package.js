@@ -1,6 +1,6 @@
 Package.describe({
   name:'clinical:active-users',
-  version: '0.1.2',
+  version: '0.2.0',
   summary: 'ActiveUsers package with user tables, thumbnail page, basic profiles, etc.',
   git: 'https://github.com/clinical-meteor/clinical-active-users',
   documentation: 'README.md',
@@ -44,11 +44,11 @@ Package.onUse( function ( api ) {
   api.addFiles('client/components/usersListPage/usersListPage.less', ['client']);
 
 
-  api.addFiles('public/Default_Female_1.png', {isAsset: true});
-  api.addFiles('public/Default_Female_2.png', {isAsset: true});
-  api.addFiles('public/Default_Male_1.png', {isAsset: true});
-  api.addFiles('public/Default_Male_2.png', {isAsset: true});
-  api.addFiles('public/Default_User.png', {isAsset: true});
+  api.addFiles('public/Default_Female_1.png', 'client');
+  api.addFiles('public/Default_Female_2.png', 'client');
+  api.addFiles('public/Default_Male_1.png', 'client');
+  api.addFiles('public/Default_Male_2.png', 'client');
+  api.addFiles('public/Default_User.png', 'client');
 
   api.addFiles('server/initialize.js', 'server');
 

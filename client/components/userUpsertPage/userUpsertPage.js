@@ -30,7 +30,15 @@ Router.route( '/view/user/:id', {
   onAfterAction: function () {
     Session.set( 'userReadOnly', true );
   }
-} );
+});
+Router.route( '/myprofile', {
+  name: 'myProfileRoute',
+  template: 'userUpsertPage',
+  data: function () {
+    return Meteor.users.findOne( Meteor.userId() );
+  }
+});
+
 
 
 //-------------------------------------------------------------

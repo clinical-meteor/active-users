@@ -43,19 +43,28 @@
     position: static;
     .userItem{
       font-size: 14px;
-      padding-top: 10px;
-      padding-bottom: 10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
       span{
         display: inline-block;
       }
-      .avatar{
+      .avatarSpan{
         min-width: 64px;
+      }
+      .avatar{
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        border: 2px solid gray;
       }
       .fullName{
         min-width: 200px;
       }
       .role{
         left: 200px;
+      }
+      .remove{
+        padding-top: 10px;
       }
     }
     .user:hover{
