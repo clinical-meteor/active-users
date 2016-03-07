@@ -13,9 +13,9 @@ Package.onUse( function ( api ) {
 
   api.use('clinical:router@2.0.17');
   api.use('clinical:active-layout@0.7.16');
-  api.use('clinical:glass-ui@1.3.9');
+  //api.use('clinical:glass-ui@1.3.9');
 
-  api.addFiles('users-core.js', 'client');
+  api.addFiles('client/users-helpers.js', 'client');
 
   api.addFiles('client/components/userUpsertPage/userUpsertPage.html', ['client']);
   api.addFiles('client/components/userUpsertPage/userUpsertPage.js', ['client']);
@@ -43,9 +43,19 @@ Package.onUse( function ( api ) {
   api.addFiles('client/components/usersListPage/usersListPage.js', ['client']);
   api.addFiles('client/components/usersListPage/usersListPage.less', ['client']);
 
-  api.addFiles('server/methods.js', 'server');
 
-  api.export('userUpsertPage');
+  api.addFiles('public/Default_Female_1.png', {isAsset: true});
+  api.addFiles('public/Default_Female_2.png', {isAsset: true});
+  api.addFiles('public/Default_Male_1.png', {isAsset: true});
+  api.addFiles('public/Default_Male_2.png', {isAsset: true});
+  api.addFiles('public/Default_User.png', {isAsset: true});
+
+  api.addFiles('server/initialize.js', 'server');
+
+  api.addFiles('lib/Users.js');
+
+  api.export('Users');
+  //api.export('userUpsertPage');
 });
 
 Package.onTest( function ( api ) {

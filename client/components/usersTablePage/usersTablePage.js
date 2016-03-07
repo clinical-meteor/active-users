@@ -84,12 +84,12 @@ Template.usersTablePage.helpers({
     // step C:  receive some data and set our reactive data variable with a new value
     Session.set('receivedData', new Date());
 
-    Template.appLayout.delayedLayout(100);
+    //Template.appLayout.delayedLayout(100);
 
     // this is a performant local (client-side) search on the data
     // current in our CustomerAccounts cursor, and will reactively
     // update the table
-    return Meteor.users.find({
+    return Users.find({
       'profile.fullName': {
         $regex: Session.get('userSearchFilter'),
         $options: 'i'
@@ -99,7 +99,7 @@ Template.usersTablePage.helpers({
 
 
 Template.usersTablePage.rendered = function(){
-  Template.appLayout.layout();
+  //Template.appLayout.layout();
 
   // step A:  initialize the table sorting functionality
   $(this.find('#usersTable')).tablesorter();

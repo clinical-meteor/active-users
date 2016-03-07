@@ -1,8 +1,0 @@
-
-
-
-Meteor.methods({
-  methodName:function (){ 
-
-  }
-});

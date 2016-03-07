@@ -33,10 +33,9 @@ Template.usersListPage.events( {
   // use keyup to implement dynamic filtering
   // keyup is preferred to keypress because of end-of-line issues
   'keyup #userSearchInput': function () {
-    Session.set( 'userSearchFilter', $( '#userSearchInput' )
-      .val() );
+    Session.set( 'userSearchFilter', $( '#userSearchInput' ).val() );
   }
-} );
+});
 
 
 //------------------------------------------------------------------------------
@@ -49,14 +48,13 @@ var EVENTS = 'webkitTransitionEnd oTransitionEnd transitionEnd msTransitionEnd t
 Template.usersListPage.rendered = function () {
   console.log( 'trying to update layout...' );
 
-  Template.appLayout.delayedLayout( 20 );
+  //Template.appLayout.delayedLayout( 20 );
 };
 
 
 Template.usersListPage.helpers( {
   hasNoContent: function () {
-    if ( Meteor.users.find()
-      .count() === 0 ) {
+    if ( Users.find().count() === 0 ) {
       return true;
     } else {
       return false;
@@ -65,7 +63,7 @@ Template.usersListPage.helpers( {
   usersList: function () {
     Session.set( 'receivedData', new Date() );
 
-    Template.appLayout.delayedLayout( 20 );
+    //Template.appLayout.delayedLayout( 20 );
 
     return Meteor.users.find( {
       'profile.fullName': {
