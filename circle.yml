@@ -45,21 +45,21 @@ dependencies:
     # - if [ ! -e ${HOME}/helloworld ]; then meteor create --release METEOR@1.1.0.3 helloworld; else echo "helloworld app seems to be cached"; fi;
 
   override:
-    # - cd ${HOME} && meteor create --release METEOR@1.1.0.3 helloworld
-    # - cd ${HOME}/helloworld
-    # - cd ${HOME}/helloworld && ls -la
-    # - cd ${HOME}/helloworld && rm helloworld.*
-    # - cd ${HOME}/helloworld && mkdir packages && mkdir packages/active-entry
-    # - cp -R * ${HOME}/helloworld/packages/active-entry
-    # - cd ${HOME}/helloworld && meteor add anti:gagarin@0.4.11 accounts-base accounts-password session meteor-platform clinical:user-model clinical:active-entry
-    # - cd ${HOME}/helloworld && starrynight autoconfig
-    # - cd ${HOME}/helloworld && meteor list
-    # - cat tests/gagarin/activeEntryTests.js
-    # - ls -la
-    # - cd ~ && ls -la
-    # - cd ${HOME} && pwd
-    # - cd ${HOME} && ls -la
-    # - cd ${HOME}/helloworld && ls -la
+    - cd ${HOME} && meteor create --release METEOR@1.1.0.3 helloworld
+    - cd ${HOME}/helloworld
+    - cd ${HOME}/helloworld && ls -la
+    - cd ${HOME}/helloworld && rm helloworld.*
+    - cd ${HOME}/helloworld && mkdir packages && mkdir packages/active-users
+    - cp -R * ${HOME}/helloworld/packages/active-users
+    - cd ${HOME}/helloworld && meteor add anti:gagarin@0.4.11 accounts-base accounts-password session meteor-platform clinical:user-model clinical:active-entry clinical:active-users
+    - cd ${HOME}/helloworld && starrynight autoconfig
+    - cd ${HOME}/helloworld && meteor list
+    - cat tests/gagarin/UsersTests.js
+    - ls -la
+    - cd ~ && ls -la
+    - cd ${HOME} && pwd
+    - cd ${HOME} && ls -la
+    - cd ${HOME}/helloworld && ls -la
 
 ## Customize test commands
 test:
