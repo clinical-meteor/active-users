@@ -16,8 +16,9 @@ Router.map( function () {
     data: function () {
       return Meteor.users.find();
     }
-  } );
-} );
+  });
+});
+
 
 
 //------------------------------------------------------------------------------
@@ -34,10 +35,18 @@ Template.usersListPage.events( {
   // keyup is preferred to keypress because of end-of-line issues
   'keyup #userSearchInput': function () {
     Session.set( 'userSearchFilter', $( '#userSearchInput' ).val() );
+    //Session.set('userSearchFilter', $('#librarySearchInput').val());
   }
 });
 
-
+Template.userSearchInput.events({
+  // use keyup to implement dynamic filtering
+  // keyup is preferred to keypress because of end-of-line issues
+  'keyup #userSearchInput': function () {
+    Session.set( 'userSearchFilter', $( '#userSearchInput' ).val() );
+    //Session.set('userSearchFilter', $('#librarySearchInput').val());
+  }
+});
 //------------------------------------------------------------------------------
 // TEMPLATE OUTPUTS
 
@@ -45,14 +54,23 @@ Template.usersListPage.events( {
 var OFFSCREEN_CLASS = 'off-screen';
 var EVENTS = 'webkitTransitionEnd oTransitionEnd transitionEnd msTransitionEnd transitionend';
 
-Template.usersListPage.rendered = function () {
-  console.log( 'trying to update layout...' );
-
-  //Template.appLayout.delayedLayout( 20 );
-};
+// Template.usersListPage.rendered = function () {
+//   console.log( 'trying to update layout...' );
+//
+//   //Template.appLayout.delayedLayout( 20 );
+// };
 
 
 Template.usersListPage.helpers( {
+  getHumanNameText: function(){
+    if (this && this.profile && this.profile.name && this.profile.name.text) {
+      return this.profile.name.text
+    } else if (this && this.profile && this.profile.fullName) {
+      return this.profile.fullName;
+    } else {
+      return "---";
+    }
+  },
   getCreatedAt: function(){
     return moment(this.createdAt).format("MMM DD, YYYY");
   },
@@ -65,8 +83,6 @@ Template.usersListPage.helpers( {
   },
   usersList: function () {
     Session.set( 'receivedData', new Date() );
-
-    //Template.appLayout.delayedLayout( 20 );
 
     return Meteor.users.find( {
       'profile.fullName': {

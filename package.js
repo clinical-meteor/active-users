@@ -1,6 +1,6 @@
 Package.describe({
   name:'clinical:active-users',
-  version: '0.2.0',
+  version: '0.3.0',
   summary: 'ActiveUsers package with user tables, thumbnail page, basic profiles, etc.',
   git: 'https://github.com/clinical-meteor/clinical-active-users',
   documentation: 'README.md',
@@ -13,7 +13,7 @@ Package.onUse( function ( api ) {
 
   api.use('clinical:router@2.0.17');
   api.use('clinical:active-layout@0.7.16');
-  //api.use('clinical:glass-ui@1.3.9');
+  api.use('clinical:glass-ui@1.3.10');
 
   api.addFiles('client/users-helpers.js', 'client');
 

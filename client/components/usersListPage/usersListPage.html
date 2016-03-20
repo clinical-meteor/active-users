@@ -2,8 +2,7 @@
 <template name="usersListPage">
   <div id="usersListPage" class="page" style="{{getPageHeight}}">
     <!-- {{> recordHeader url="users" spreadsheet=false  imageGrid=false}} -->
-    <div class="horizontally-padded" style="{{getOpacityWithCorner}}">
-      <input id="userSearchInput" type="text" class="glass fullwidth" placeholder="search users..." value="{{getRecordSearchFilter}}" />
+    <div class="horizontally-padded" style="{{getCardOpacity}}">
       <br><br>
       <ul id="usersList">
         {{#if hasNoContent}}
@@ -25,7 +24,7 @@
           {{#each usersList}}
             <li class="userItem user">
               <span class="avatarSpan"><img class="avatar" src="{{getAvatar}}" alt="" /></span>
-              <span class="fullName">{{profile.fullName}}</span>
+              <span class="fullName">{{ getHumanNameText }}</span>
               <span class="role">{{role}}</span>
               <span class="createdAt">{{getCreatedAt}}</span>
               <span class="right remove"><i class="fa fa-times"></i></span>
@@ -36,4 +35,9 @@
     </div>
     <!-- {{> recordFooter }} -->
   </div>
+</template>
+
+
+<template name="userSearchInput">
+  <input id="userSearchInput" type="text" class="glass fullwidth" placeholder="search users..." value="{{getRecordSearchFilter}}" />
 </template>
