@@ -44,10 +44,6 @@ Router.route( '/myprofile', {
 //-------------------------------------------------------------
 
 
-Template.userUpsertPage.rendered = function () {
-  Template.appLayout.layout();
-};
-
 
 Template.userUpsertPage.helpers( {
   getEmailAddress: function () {

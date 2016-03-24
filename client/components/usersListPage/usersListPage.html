@@ -24,10 +24,10 @@
           {{#each usersList}}
             <li class="userItem user">
               <span class="avatarSpan"><img class="avatar" src="{{getAvatar}}" alt="" /></span>
-              <span class="fullName">{{ getHumanNameText }}</span>
-              <span class="role">{{role}}</span>
-              <span class="createdAt">{{getCreatedAt}}</span>
-              <span class="right remove"><i class="fa fa-times"></i></span>
+              <span class="fullName text">{{ getHumanNameText }}</span>
+              <span class="role text">{{role}}</span>
+              <span class="createdAt text">{{getCreatedAt}}</span>
+              <span class="right text remove"><i class="fa fa-times"></i></span>
             </li>
           {{/each}}
         {{/if}}

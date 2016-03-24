@@ -5,17 +5,9 @@ Router.map(function(){
     template: 'userPreviewPage',
     data: function () {
       return Meteor.users.findOne({_id: this.params.id});
-    },
-    onAfterAction: function(){
-      Template.appLayout.layout();
     }
   });
 });
-
-
-Template.userPreviewPage.rendered = function(){
-  Template.appLayout.layout();
-};
 
 
 

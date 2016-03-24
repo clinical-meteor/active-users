@@ -1,16 +1,16 @@
-Session.setDefault( 'userSearchFilter', '' );
-Session.setDefault( 'tableLimit', 20 );
-Session.setDefault( 'paginationCount', 1 );
-Session.setDefault( 'selectedPagination', 0 );
-Session.setDefault( 'skipCount', 0 );
+Session.setDefault('userSearchFilter', '');
+Session.setDefault('tableLimit', 20);
+Session.setDefault('paginationCount', 1);
+Session.setDefault('selectedPagination', 0);
+Session.setDefault('skipCount', 0);
 
 
 
 //------------------------------------------------------------------------------
 // ROUTING
 
-Router.map( function () {
-  this.route( 'usersListPage', {
+Router.map(function () {
+  this.route('usersListPage', {
     path: '/list/users/',
     template: 'usersListPage',
     data: function () {
@@ -24,17 +24,17 @@ Router.map( function () {
 //------------------------------------------------------------------------------
 // TEMPLATE INPUTS
 
-Template.usersListPage.events( {
+Template.usersListPage.events({
   'click .addRecordIcon': function () {
-    Router.go( '/insert/user' );
+    Router.go('/insert/user');
   },
   'click .userItem': function () {
-    Router.go( '/view/user/' + this._id );
+    Router.go('/view/user/' + this._id);
   },
   // use keyup to implement dynamic filtering
   // keyup is preferred to keypress because of end-of-line issues
   'keyup #userSearchInput': function () {
-    Session.set( 'userSearchFilter', $( '#userSearchInput' ).val() );
+    Session.set('userSearchFilter', $('#userSearchInput').val());
     //Session.set('userSearchFilter', $('#librarySearchInput').val());
   }
 });
@@ -43,7 +43,7 @@ Template.userSearchInput.events({
   // use keyup to implement dynamic filtering
   // keyup is preferred to keypress because of end-of-line issues
   'keyup #userSearchInput': function () {
-    Session.set( 'userSearchFilter', $( '#userSearchInput' ).val() );
+    Session.set('userSearchFilter', $('#userSearchInput').val());
     //Session.set('userSearchFilter', $('#librarySearchInput').val());
   }
 });
@@ -61,34 +61,34 @@ var EVENTS = 'webkitTransitionEnd oTransitionEnd transitionEnd msTransitionEnd t
 // };
 
 
-Template.usersListPage.helpers( {
-  getHumanNameText: function(){
+Template.usersListPage.helpers({
+  getHumanNameText: function () {
     if (this && this.profile && this.profile.name && this.profile.name.text) {
-      return this.profile.name.text
+      return this.profile.name.text;
     } else if (this && this.profile && this.profile.fullName) {
       return this.profile.fullName;
     } else {
       return "---";
     }
   },
-  getCreatedAt: function(){
+  getCreatedAt: function () {
     return moment(this.createdAt).format("MMM DD, YYYY");
   },
   hasNoContent: function () {
-    if ( Users.find().count() === 0 ) {
+    if (Users.find().count() === 0) {
       return true;
     } else {
       return false;
     }
   },
   usersList: function () {
-    Session.set( 'receivedData', new Date() );
+    Session.set('receivedData', new Date());
 
-    return Meteor.users.find( {
+    return Meteor.users.find({
       'profile.fullName': {
-        $regex: Session.get( 'userSearchFilter' ),
+        $regex: Session.get('userSearchFilter'),
         $options: 'i'
       }
-    } );
+    });
   }
-} );
+});

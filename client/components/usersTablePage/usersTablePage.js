@@ -99,7 +99,6 @@ Template.usersTablePage.helpers({
 
 
 Template.usersTablePage.rendered = function(){
-  //Template.appLayout.layout();
 
   // step A:  initialize the table sorting functionality
   $(this.find('#usersTable')).tablesorter();

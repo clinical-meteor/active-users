@@ -14,7 +14,6 @@
     // text-overflow: ellipsis;
     border-top: 1px solid #f0f9fb;
 
-
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -43,8 +42,9 @@
     position: static;
     .userItem{
       font-size: 14px;
-      padding-top: 5px;
-      padding-bottom: 5px;
+      //padding-top: 5px;
+      //padding-bottom: 5px;
+
       span{
         display: inline-block;
       }
@@ -52,52 +52,50 @@
         min-width: 64px;
       }
       .avatar{
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        border: 2px solid gray;
+        width: 40px;
+        height: 40px;
       }
       .fullName{
         min-width: 200px;
       }
       .role{
         left: 200px;
+        min-width: 200px;
       }
       .remove{
-        padding-top: 10px;
+        // padding-top: 10px;
       }
     }
     .user:hover{
-      color: maroon;
-      border-top: 1px solid maroon !important;
+      // color: maroon;
+      // border-top: 1px solid maroon !important;
+      border-top: 1px solid gray !important;
       cursor: pointer;
+    }
+    .user{
+      margin-bottom: 10px;
+
+      .text{
+        vertical-align: top;
+        padding-top: 12px;
+      }
     }
     .header{
       font-weight: bold;
+      margin-bottom: 10px;
     }
-    // overflow-y: scroll;
   }
 
   .right{
     float: right;
-    // position: absolute;
-    // top: 0px;
-    // right: 0px;
   }
-  // .descriptionText{
-  //   position: absolute;
-  //   top: 25px;
-  // }
+
   .fadeAway{
     height: 10px;
     width: 100%;
-    //opacity: .8;
-    //background-color: red;
     bottom: 0px;
     position: absolute;
     background: inherit;
-    // background: linear-gradient(180deg, transparent, inherit);
-    //background: -webkit-linear-gradient(180deg, transparent, inherit);
   }
   .addRecordIcon{
     text-align: center;

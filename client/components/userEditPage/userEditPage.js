@@ -5,9 +5,6 @@ Router.route("/edit/user/:userId", {
   template:"userEditPage",
   data: function(){
     return Meteor.users.findOne(this.params.userId)
-  },
-  onAfterAction: function(){
-    Template.appLayout.layout();
   }
 });
 
@@ -21,10 +18,6 @@ Template.userEditPage.helpers({
     }
   }
 });
-
-Template.userEditPage.rendered = function(){
-  Template.appLayout.layout();
-};
 
 
 
